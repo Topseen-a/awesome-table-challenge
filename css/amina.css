@@ -6,36 +6,33 @@
 html,
 body {
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 }
 
-tr.mainHeader {
-	border: 1px solid blue;
-}
-tr.mainData {
-	border: 1px solid rgb(144, 25, 25);
-}
 body {
-	font-family: OpenSans-Regular;
+	font-family: sans-serif, OpenSans-Regular;
 	font-size: 1rem;
 	font-weight: 400;
 	color: #212529;
-	background-color: #753061;
 	line-height: 2;
+	background: linear-gradient(45deg, #4158d0, #c850c0);
 }
 main {
-	width: 90%;
-	margin-inline: auto !important;
+	width: 92%;
+	margin-inline: auto;
 }
 
 /* --------- Mobile layout --------- */
-table {
+.table-wrap {
+	margin: 1.87em 0;
+	border-radius: 10px;
+	overflow: hidden; /* To prevent content overflow affecting border-radius */
+}
+.table {
 	width: 100%;
 	border-spacing: 0;
-	padding: 0.7rem;
-	margin: 1.87em 0;
 	background-color: #fff;
-	border-radius: 10px;
+	border-collapse: collapse;
 }
 .table-100-hide {
 	display: none;
@@ -48,7 +45,7 @@ tr.mainData {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
-	padding: 15px 0;
+	padding: 20px 0 20px 20px;
 }
 tr.mainHeader {
 	width: 40%;
@@ -56,22 +53,55 @@ tr.mainHeader {
 tr.mainData {
 	width: 60%;
 }
-.table-row:nth-child(even) {
-	background-color: #fac6c6;
+.mainHeader th {
+	color: #999;
+	font-weight: unset;
+}
+.mainData td {
+	color: #808080;
+}
+.mainData td,
+.mainHeader th {
+	font-size: 0.8rem;
+	padding: 10px;
+	height: 40px;
+}
+.marginBottom {
+	margin-bottom: 15px;
 }
 
+.table-row:nth-child(odd) {
+	background-color: #f5f5f5;
+}
+
+/*--------- MEDIA QUERIES ---------*/
 @media screen and (min-width: 993px) {
-	body {
-		min-height: 100vh;
-		display: flex;
-		align-items: center;
+	.table {
+		border-radius: 10px;
+		overflow: hidden;
 	}
 	.table-100-hide {
 		display: table-header-group;
 	}
-	.topHeader > th,
-	td {
+	.topHeader > th {
 		text-align: left;
+		background-color: #36304a;
+		color: #fff;
+		font-weight: 300;
+		font-size: 1rem;
+		height: 60px;
+	}
+	th,
+	td {
+		padding-left: 10px !important;
+	}
+	.mainData td {
+		padding: 0;
+		height: 40px;
+	}
+	.column1,
+	.column5 {
+		padding-left: 40px !important;
 	}
 
 	.table-row tr.mainHeader {
@@ -79,9 +109,6 @@ tr.mainData {
 	}
 	.table-row {
 		display: table-row-group;
-	}
-	.table-row:nth-child(even) {
-		background-color: transparent;
 	}
 	tr.mainHeader,
 	tr.mainData {
@@ -92,6 +119,9 @@ tr.mainData {
 
 @media screen and (min-width: 1220px) {
 	main {
-		max-width: 1050px;
+		max-width: 1150px;
+	}
+	.table-wrap {
+		padding: 0 80px;
 	}
 }

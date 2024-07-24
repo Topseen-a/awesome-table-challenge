@@ -81,7 +81,8 @@ firebase-debug.*.log*
 
 # Firebase cache
 .firebase/
-
+.firebaserc
+firebase.json
 # Firebase config
 
 # Uncomment this if you'd like others to create their own Firebase project.
@@ -161,6 +162,7 @@ $RECYCLE.BIN/
 *.lnk
 
 ### others ###
+/public/
 /style-guide.md
 design/
 *.txt
