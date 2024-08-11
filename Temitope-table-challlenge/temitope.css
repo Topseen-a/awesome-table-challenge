@@ -1,0 +1,30 @@
+html,
+body {
+  background: linear-gradient(to right, #5e29c0, #750f68);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.table {
+  background-color: #ddd;
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.thead {
+  background-color: #0d0222;
+  color: #ddd;
+}
+
+.thead th,
+.tbody td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
