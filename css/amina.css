@@ -1,0 +1,141 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	width: 100%;
+	min-height: 100%;
+}
+
+body {
+	font-family: sans-serif, OpenSans-Regular;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #212529;
+	line-height: 2;
+	background: linear-gradient(45deg, #4158d0, #c850c0);
+}
+main {
+	width: 92%;
+	margin-inline: auto;
+}
+
+/* --------- Mobile layout --------- */
+.table-wrap {
+    /* margin-top: 1.87rem; */
+	border-radius: 10px;
+	overflow: hidden; /* To prevent content overflow affecting border-radius */
+}
+.table {
+	width: 100%;
+	border-spacing: 0;
+	background-color: #fff;
+	border-collapse: collapse;
+}
+.table-100-hide {
+	display: none;
+}
+.table-row {
+	display: flex;
+}
+tr.mainHeader,
+tr.mainData {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	padding: 20px 0 20px 20px;
+}
+tr.mainHeader {
+	width: 40%;
+}
+tr.mainData {
+	width: 60%;
+}
+.mainHeader th {
+	color: #999;
+	font-weight: unset;
+}
+.mainData td {
+	color: #808080;
+}
+.mainData td,
+.mainHeader th {
+	font-size: 0.8rem;
+	padding: 10px;
+	height: 40px;
+}
+.marginBottom {
+	margin-bottom: 15px;
+}
+
+.table-row:nth-child(odd) {
+	background-color: #f5f5f5;
+}
+footer p {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #f5f5f5;
+    padding: 10px;
+}
+
+/*--------- MEDIA QUERIES ---------*/
+@media screen and (min-width: 993px) {
+    body {
+        min-height: unset;
+    }
+    .container {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr auto auto;
+    }
+	.table {
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	.table-100-hide {
+		display: table-header-group;
+	}
+	.topHeader > th {
+		text-align: left;
+		background-color: #36304a;
+		color: #fff;
+		font-weight: 300;
+		font-size: 1rem;
+		height: 60px;
+	}
+	th,
+	td {
+		padding-left: 10px !important;
+	}
+	.mainData td {
+		padding: 0;
+		height: 40px;
+	}
+	.column1,
+	.column5 {
+		padding-left: 40px !important;
+	}
+
+	.table-row tr.mainHeader {
+		display: none;
+	}
+	.table-row {
+		display: table-row-group;
+	}
+	tr.mainHeader,
+	tr.mainData {
+		width: 100%;
+		display: table-row;
+	}
+}
+
+@media screen and (min-width: 1220px) {
+	main {
+		max-width: 1150px;
+	}
+	.table-wrap {
+		padding: 0 80px;
+	}
+} /* 127 css lines, 333 html lines */
